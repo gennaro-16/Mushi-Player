@@ -1,43 +1,69 @@
-🎵 HarmonyPlayer – Mobile Music Player Application
+🎵 HarmonyPlayer – Flutter Cross-Platform Music Player
 
-HarmonyPlayer is a mobile music player application developed as part of my Mobile Development coursework. The project focuses on building a smooth, responsive, and user-friendly audio experience while applying clean architecture and best development practices.
+HarmonyPlayer is a cross-platform mobile music player application developed using Flutter. The project demonstrates modern mobile development practices, clean architecture, and efficient state management while delivering a smooth and responsive user experience.
 
 🚀 Features
 
-Audio playback (Play / Pause / Next / Previous)
+Play / Pause / Next / Previous controls
 
-Background playback support
+Background audio playback
 
 Playlist creation and management
 
-Track progress control (Seek functionality)
+Real-time progress tracking and seek functionality
 
-Clean and intuitive UI
+Responsive and adaptive UI
 
-Efficient state management
+Smooth state synchronization between UI and audio engine
 
-🛠️ Technical Highlights
+🛠️ Technical Stack
 
-Structured using clean architecture principles
+Flutter (Cross-platform development)
 
-Optimized audio handling and lifecycle management
+Dart
 
-Proper state management for smooth UI updates
+Audio playback package (e.g., just_audio / audioplayers)
 
-Modular and maintainable code structure
+Structured architecture with separation of concerns
 
-🎯 Project Objective
+Optimized state management (Provider / Riverpod / Bloc – adjust based on what you use)
 
-The goal of this project was to strengthen my understanding of:
+🧠 Technical Highlights
 
-Mobile application architecture
+Clean and modular code structure
+
+Efficient lifecycle handling
+
+Optimized audio resource management
+
+Scalable architecture ready for feature expansion
+
+Cross-platform compatibility (Android & iOS)
+
+🎯 Project Goals
+
+This project was built to strengthen my understanding of:
+
+Cross-platform mobile development
 
 Audio service integration
 
-State management
+State management patterns
 
 Performance optimization
 
-UI/UX design principles
+UI/UX best practices
 
-This project reflects my ability to build functional, well-structured mobile applications with real-world usability.
+It reflects my ability to design and develop scalable, production-ready mobile applications using Flutter.
+
+🔮 Future Improvements
+
+Online streaming integration
+
+Offline caching
+
+Equalizer system
+
+User authentication
+
+Cloud-based playlist synchronization
