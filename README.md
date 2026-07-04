@@ -30,20 +30,29 @@ Unlike most Flutter audio apps, Mushi Player uses **no Dart audio package** — 
 
 ## 📱 Screenshots
 
-> Replace these placeholders with real captures — just drop the images into [`docs/screenshots/`](docs/screenshots/).
+A quick walkthrough of the app, from launch to playback and system integration.
 
 <div align="center">
 
-| Splash | Player | Favorites | Notification |
-|:------:|:------:|:---------:|:------------:|
-| <img src="docs/screenshots/splash.png" alt="Splash screen" width="200" /> | <img src="docs/screenshots/player.png" alt="Player screen" width="200" /> | <img src="docs/screenshots/favorites.png" alt="Favorites screen" width="200" /> | <img src="docs/screenshots/notification.png" alt="Notification controls" width="200" /> |
+### Launch experience
+
+| Home-screen icon | Native launch | Splash |
+|:----------------:|:-------------:|:------:|
+| <img src="docs/screenshots/app-from-menu.jpg" alt="Mushi Player icon on the home screen" width="230" /> | <img src="docs/screenshots/entry-before-splash.jpg" alt="Native launch screen" width="230" /> | <img src="docs/screenshots/splash.jpg" alt="Splash screen" width="230" /> |
+
+### In the app
+
+| Now Playing | Favorites |
+|:-----------:|:---------:|
+| <img src="docs/screenshots/music-playing.jpg" alt="Now Playing screen" width="250" /> | <img src="docs/screenshots/favorites.jpg" alt="Favorites screen" width="250" /> |
+
+### Background & system integration
+
+| Notification controls | Lock-screen controls |
+|:---------------------:|:--------------------:|
+| <img src="docs/screenshots/notification-inside.jpg" alt="Expanded media notification" width="250" /> | <img src="docs/screenshots/notification-outside.jpg" alt="Lock-screen media controls" width="250" /> |
 
 </div>
-
-<!--
-📸 Until you add the images above, GitHub will show a broken-image icon.
-   That's expected — add your PNGs to docs/screenshots/ and they'll appear.
--->
 
 ---
 

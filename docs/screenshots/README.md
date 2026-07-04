@@ -1,18 +1,15 @@
 # Screenshots
 
-Drop your app screenshots here so they show up in the main [README](../../README.md).
-
-Expected file names (replace these with your real captures):
+These images are shown in the main [README](../../README.md).
 
 | File | Shows |
 |------|-------|
-| `splash.png` | Splash / launch screen |
-| `player.png` | Now-playing / player screen |
-| `favorites.png` | Favorites list |
-| `notification.png` | Lock-screen / notification media controls |
-| `banner.png` | Optional wide banner for the top of the README |
+| `app-from-menu.jpg` | App icon on the device home screen |
+| `entry-before-splash.jpg` | Native launch screen (before Flutter starts) |
+| `splash.jpg` | Flutter splash screen |
+| `music-playing.jpg` | Now-playing / player screen |
+| `favorites.jpg` | Favorites list |
+| `notification-inside.jpg` | Expanded media-player notification |
+| `notification-outside.jpg` | Lock-screen media controls |
 
-Tips:
-- Portrait phone shots look best around **1080 × 2340** (or any 9:19.5 ratio).
-- Keep each file under ~500 KB (PNG or JPG) so the repo stays light.
-- You can grab shots from a device/emulator with `flutter screenshot` or `adb exec-out screencap -p > player.png`.
+To refresh or add shots: capture on a device/emulator (e.g. `adb exec-out screencap -p > name.png`), drop the file here, and reference it from the README.
