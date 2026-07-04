@@ -1,8 +1,49 @@
+<div align="center">
+
+<!-- 📸 Replace with your app logo (assets/flower-pot.png works nicely) -->
+<img src="assets/flower-pot.png" alt="Mushi Player logo" width="120" />
+
 # 🎵 Mushi Player
 
-**Mushi Player** is a lightweight Android music player built with **Flutter**. It plays the MP3 files already on your device and drives all playback through a **native Android foreground service**, so audio keeps running in the background with full lock-screen, notification, Bluetooth, and Android Auto controls.
+**A lightweight Android music player built with Flutter — plays your on-device MP3s with true native background playback.**
+
+<!-- 📸 Optional: drop a wide hero/banner image here -->
+<!-- <img src="docs/screenshots/banner.png" alt="Mushi Player banner" width="100%" /> -->
+
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white)](https://dart.dev)
+[![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org)
+[![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)](#)
+[![License](https://img.shields.io/badge/License-see%20LICENSE-blue.svg)](LICENSE)
+
+</div>
+
+---
+
+## 📖 Overview
+
+**Mushi Player** plays the MP3 files already on your device and drives all playback through a **native Android foreground service**, so audio keeps running in the background with full lock-screen, notification, Bluetooth, and Android Auto controls.
 
 Unlike most Flutter audio apps, Mushi Player uses **no Dart audio package** — playback runs natively via `android.media.MediaPlayer` inside a foreground service, while Flutter only sends commands and renders state over platform channels.
+
+---
+
+## 📱 Screenshots
+
+> Replace these placeholders with real captures — just drop the images into [`docs/screenshots/`](docs/screenshots/).
+
+<div align="center">
+
+| Splash | Player | Favorites | Notification |
+|:------:|:------:|:---------:|:------------:|
+| <img src="docs/screenshots/splash.png" alt="Splash screen" width="200" /> | <img src="docs/screenshots/player.png" alt="Player screen" width="200" /> | <img src="docs/screenshots/favorites.png" alt="Favorites screen" width="200" /> | <img src="docs/screenshots/notification.png" alt="Notification controls" width="200" /> |
+
+</div>
+
+<!--
+📸 Until you add the images above, GitHub will show a broken-image icon.
+   That's expected — add your PNGs to docs/screenshots/ and they'll appear.
+-->
 
 ---
 
@@ -38,6 +79,16 @@ Unlike most Flutter audio apps, Mushi Player uses **no Dart audio package** — 
 ## 🏗️ Architecture
 
 Flutter and Android communicate strictly through platform channels — the UI never touches the service directly.
+
+```
+┌────────────────────┐   MethodChannel (commands)    ┌────────────────────────┐
+│      Flutter UI     │ ────────────────────────────▶ │   Android native side  │
+│  (player, favorites)│                                │                        │
+│                     │ ◀──────────────────────────── │  MusicService.kt       │
+│ music_service_bridge│   EventChannels (state, shake) │  (MediaPlayer +        │
+└────────────────────┘                                │   MediaSessionCompat)  │
+                                                       └────────────────────────┘
+```
 
 ### Android side (`android/app/src/main/kotlin/com/gennaro16/mushiplayer/`)
 
@@ -90,13 +141,35 @@ On first launch, grant the audio/media and notification permissions so the playe
 
 ---
 
-## 🔮 Future Improvements
+## 📂 Project Structure
 
-- Online streaming integration
-- Offline caching
-- Equalizer system
-- Cloud-based playlist synchronization
-- iOS native playback parity
+```
+lib/
+├── main.dart                     # App entry, initializes the native bridge
+├── controllers/                  # Favorites controller
+├── models/                       # Song model
+├── repositories/                 # Favorites persistence (SQLite)
+├── screens/                      # Splash, Player, Favorites
+├── services/                     # Native bridge + artwork palette
+├── theme/                        # App theming
+└── widgets/                      # Reusable UI components
+
+android/app/src/main/kotlin/com/gennaro16/mushiplayer/
+├── MainActivity.kt               # Channels + permissions
+├── MusicService.kt               # Foreground playback service
+├── MusicBridge.kt                # MethodChannel / event sink helper
+└── MediaLibrary.kt               # MediaStore querying
+```
+
+---
+
+## 🔮 Roadmap
+
+- [ ] Online streaming integration
+- [ ] Offline caching
+- [ ] Equalizer system
+- [ ] Cloud-based playlist synchronization
+- [ ] iOS native playback parity
 
 ---
 
@@ -107,3 +180,9 @@ Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 ## 📄 License
 
 This project is licensed under the terms of the [LICENSE](LICENSE) file.
+
+---
+
+<div align="center">
+Made with ❤️ and Flutter by <a href="https://github.com/gennaro-16">gennaro-16</a>
+</div>
